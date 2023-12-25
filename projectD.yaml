@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-first-deployment
+spec:
+  selector:
+    matchLabels:
+      app: os2-project
+  replicas: 3
+  template: 
+    metadata:
+      name: my-first-pod
+      labels:
+        app: os2-project
+    spec:
+      containers:
+        - image: salma548/nginx-test
+          name: nginx-container 
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+            requests:
+              memory: "100Mi"
+
+
+
+  
+
+          

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-first-pod
+  labels:
+    app: os2-project
+   
+spec:
+  containers:
+    - image: docker.io/nginx:alpine
+      name: nginx-container
+      resources:
+        limits:
+          memory: "512Mi"
+          cpu: "1"
+        requests:
+          memory: "100Mi"
+
+          
